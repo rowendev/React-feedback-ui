@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #202142;
+  background-color: #112f87;
   color: #fff;
   line-height: 1.6;
 }
@@ -47,7 +47,7 @@ header {
 .card {
   font-size: small;
   padding: 1.5rem;
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   position: relative;
   /* display: flex; */
   align-items: center;
@@ -155,15 +155,11 @@ input:focus {
   color: rgb(0, 0, 0);
 }
 
-/* FIX: Remove position: absolute to keep about icon at the bottom of the
- * document */
 .about-link {
   display: flex;
   justify-content: flex-end;
 }
 
-/* FIX: Remove position: absolute to keep about icon at the bottom of the
- * document */
 .about-link a {
   color: #fff;
   cursor: pointer;

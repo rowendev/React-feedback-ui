@@ -5,6 +5,9 @@ import FeedbackList from "./components/FeedbackList";
 import FeedbackData from "./data/FeedbackData";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import About from "./pages/About";
+import BasicSpeedDial from "./components/BasicSpeedDial";
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
@@ -23,14 +26,24 @@ function App() {
   };
 
   return (
-    <React.Fragment>
+    <Router>
       <Header />
-      <div className="container">
-        <FeedbackForm onAddFeedback={addFeedback} />
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} deleteHandler={deleteHandler} />
-      </div>
-    </React.Fragment>
+      <Routes>
+        <Route
+          path="/"
+          exact
+          element={
+            <div className="container">
+              <FeedbackForm onAddFeedback={addFeedback} />
+              <FeedbackStats feedback={feedback} />
+              <FeedbackList feedback={feedback} deleteHandler={deleteHandler} />
+            </div>
+          }
+        />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      {/* <BasicSpeedDial /> */}
+    </Router>
   );
 }
 
