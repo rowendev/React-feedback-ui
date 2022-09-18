@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Rating from "@mui/material/Rating";
+import FeedbackContext from "../context/FeedbackContext";
 
-function FeedbackStats({ feedback }) {
+function FeedbackStats() {
+  const { feedback } = useContext(FeedbackContext);
   //calculate avg
   let average =
     feedback.reduce((acc, curr) => {
@@ -14,7 +16,13 @@ function FeedbackStats({ feedback }) {
       <h5>
         Average Rating:{" "}
         {isNaN(average) ? null : (
-          <Rating name="read-only" value={average} readOnly size="small" />
+          <Rating
+            name="read-only"
+            value={+average}
+            readOnly
+            size="small"
+            sx={{ fontSize: "0.9rem" }}
+          />
         )}
       </h5>
     </div>

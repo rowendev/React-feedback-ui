@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import FeedbackItem from "./FeedbackItem";
 import Box from "@mui/material/Box";
+import FeedbackContext from "../context/FeedbackContext";
 
-function FeedbackList({ feedback, deleteHandler }) {
+function FeedbackList() {
+  const { feedback } = useContext(FeedbackContext);
+
   if (!feedback || feedback.length === 0) {
     return <p>No Feedback yet!</p>;
   }
+
   return (
     <Box>
       {feedback.map((item) => (
-        <FeedbackItem
-          key={item.id}
-          item={item}
-          deleteHandler={deleteHandler}
-        ></FeedbackItem>
+        <FeedbackItem key={item.id} item={item}></FeedbackItem>
       ))}
     </Box>
   );

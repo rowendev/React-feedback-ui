@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import FeedbackContext from "../context/FeedbackContext";
 import Card from "./shared/Card";
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
@@ -6,7 +7,9 @@ import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
 import Rating from "@mui/material/Rating";
 
-function FeedbackForm({ onAddFeedback }) {
+function FeedbackForm() {
+  const { addFeedback } = useContext(FeedbackContext);
+
   const [text, setText] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
@@ -32,7 +35,7 @@ function FeedbackForm({ onAddFeedback }) {
       rating: value,
       text: text,
     };
-    onAddFeedback(NewFeedback);
+    addFeedback(NewFeedback);
     setText("");
     setValue(5);
   };
