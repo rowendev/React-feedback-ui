@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import './components/Nav.css';
 
 * {
   box-sizing: border-box;
@@ -8,9 +9,9 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #112f87;
+  background-color: #ffffff;
   color: #fff;
-  line-height: 1.6;
+  /* line-height: 1.6; */
 }
 
 ul {
@@ -20,7 +21,7 @@ ul {
 .container {
   max-width: 768px;
   margin: auto;
-  padding: 0 20px;
+  padding: 1rem 1rem;
   animation: appear 1s ease-out forwards;
 }
 @keyframes appear {

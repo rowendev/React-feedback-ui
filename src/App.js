@@ -8,6 +8,7 @@ import FeedbackForm from "./components/FeedbackForm";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import About from "./pages/About";
 import BasicSpeedDial from "./components/BasicSpeedDial";
+import Nav from "./components/Nav";
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
@@ -27,7 +28,8 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
+      <Nav />
       <Routes>
         <Route
           path="/"
